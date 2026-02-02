@@ -294,7 +294,7 @@ body {
 }
 
 .card-1 {
-    background: linear-gradient(135deg, #8b6f47, #c9b896);
+    background: linear-gradient(135deg, #8b6f47 0%, #c9b896 50%, #a8956d 100%);
     color: white;
     top: 0;
     left: 0;
@@ -302,7 +302,7 @@ body {
 }
 
 .card-2 {
-    background: linear-gradient(135deg, #5a8552, #7aaa6e);
+    background: linear-gradient(135deg, #3d5a37 0%, #5a8552 50%, #7aaa6e 100%);
     color: white;
     top: 100px;
     right: 50px;
@@ -310,7 +310,7 @@ body {
 }
 
 .card-3 {
-    background: linear-gradient(135deg, #282f1f, #3d5a37);
+    background: linear-gradient(135deg, #141e16 0%, #282f1f 50%, #3d5a37 100%);
     color: white;
     bottom: 50px;
     left: 20px;
@@ -318,7 +318,7 @@ body {
 }
 
 .card-4 {
-    background: linear-gradient(135deg, #d4cfc0, #e8ebe5);
+    background: linear-gradient(135deg, #c9b896 0%, #d4cfc0 50%, #e8ebe5 100%);
     color: #22281e;
     bottom: 20px;
     right: 0;
@@ -439,7 +439,7 @@ body {
    =========================== */
 .about {
     padding: 100px 0;
-    background: linear-gradient(135deg, #22281e 0%, #282f1f 50%, #1f291e 100%);
+    background: var(--primary-color);
     position: relative;
 }
 
@@ -469,9 +469,8 @@ body {
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid;
-    border-image: linear-gradient(135deg, #3d5a37, #8b6f47) 1;
-    box-shadow: 0 10px 40px rgba(139, 111, 71, 0.2), inset 0 0 30px rgba(139, 111, 71, 0.1);
+    border: 3px solid var(--highlight-color);
+    box-shadow: 0 10px 40px rgba(139, 111, 71, 0.2);
     transition: var(--transition);
 }
 
@@ -545,16 +544,6 @@ body {
 
 .stat {
     text-align: center;
-    padding: 25px;
-    background: linear-gradient(135deg, rgba(139, 111, 71, 0.1) 0%, rgba(61, 90, 55, 0.1) 100%);
-    border-radius: 10px;
-    border: 1px solid rgba(139, 111, 71, 0.2);
-    transition: var(--transition);
-}
-
-.stat:hover {
-    background: linear-gradient(135deg, rgba(139, 111, 71, 0.15) 0%, rgba(61, 90, 55, 0.15) 100%);
-    transform: translateY(-5px);
 }
 
 .stat-number {
@@ -602,7 +591,7 @@ body {
 }
 
 .project-card {
-    background: linear-gradient(135deg, #282f1f 0%, var(--secondary-color) 100%);
+    background: var(--secondary-color);
     border-radius: 15px;
     overflow: hidden;
     transition: var(--transition);
@@ -688,7 +677,7 @@ body {
    =========================== */
 .skills {
     padding: 100px 0;
-    background: linear-gradient(135deg, #1f291e 0%, #22281e 50%, #282f1f 100%);
+    background: var(--primary-color);
 }
 
 .skills-container {
@@ -714,10 +703,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 15px;
-    background: linear-gradient(90deg, rgba(139, 111, 71, 0.08) 0%, rgba(61, 90, 55, 0.08) 100%);
-    border-radius: 8px;
-    border-left: 3px solid #8b6f47;
 }
 
 .skill-name {
@@ -738,7 +723,12 @@ body {
     height: 100%;
     background: linear-gradient(90deg, #8b6f47, #c9b896);
     border-radius: 3px;
-    animation: fillBar 1.5s ease-out;
+    width: 0;
+    transition: width 1.5s ease-out;
+}
+
+.skill-progress.animate {
+    width: var(--progress-width);
 }
 
 @keyframes fillBar {
@@ -773,7 +763,7 @@ body {
    =========================== */
 .contact {
     padding: 100px 0;
-    background: linear-gradient(135deg, #141e16 0%, #1f291e 50%, #22281e 100%);
+    background: var(--dark-bg);
 }
 
 .contact-content {
@@ -800,10 +790,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 15px;
-    background: linear-gradient(90deg, rgba(139, 111, 71, 0.1) 0%, rgba(61, 90, 55, 0.08) 100%);
-    border-radius: 8px;
-    border-left: 3px solid #8b6f47;
 }
 
 .info-label {
@@ -840,8 +826,8 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 15px 20px;
-    background: linear-gradient(135deg, rgba(139, 111, 71, 0.08) 0%, rgba(61, 90, 55, 0.08) 100%);
-    border: 2px solid rgba(139, 111, 71, 0.3);
+    background: var(--secondary-color);
+    border: 1px solid rgba(139, 111, 71, 0.2);
     border-radius: 8px;
     color: var(--light-text);
     font-family: inherit;
@@ -857,9 +843,8 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #8b6f47;
-    background: linear-gradient(135deg, rgba(139, 111, 71, 0.15) 0%, rgba(61, 90, 55, 0.1) 100%);
-    box-shadow: 0 0 15px rgba(139, 111, 71, 0.2);
+    border-color: var(--highlight-color);
+    background: rgba(139, 111, 71, 0.05);
 }
 
 .form-group textarea {

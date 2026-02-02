@@ -128,16 +128,16 @@ const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !skillsAnimated) {
             skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
+                const targetWidth = bar.getAttribute('data-width');
+                bar.style.setProperty('--progress-width', targetWidth);
                 setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
+                    bar.classList.add('animate');
+                }, 50);
             });
             skillsAnimated = true;
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
 if (skillBars.length) {
     skillsObserver.observe(document.querySelector('.skills'));
