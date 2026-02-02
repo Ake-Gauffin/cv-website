@@ -1,16 +1,23 @@
 /* ===========================
    ROOT & VARIABLES
+   Color palette extracted from guitarMAN.jpg
    =========================== */
 :root {
-    --primary-color: #1a1a2e;
-    --secondary-color: #16213e;
-    --accent-color: #0f3460;
-    --highlight-color: #e94560;
-    --light-text: #eaeaea;
-    --text-color: #b0b0b0;
+    --primary-color: #22281e;
+    --secondary-color: #282f1f;
+    --accent-color: #141e16;
+    --highlight-color: #3d5a37;
+    --light-text: #e8ebe5;
+    --text-color: #9fa69a;
     --white: #ffffff;
-    --dark-bg: #0f0f1e;
+    --dark-bg: #141e16;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Complementary warm tones for contrast and animations */
+    --accent-warm: #8b6f47;
+    --accent-gold: #c9b896;
+    --accent-light: #d4cfc0;
+    --accent-vibrant: #a8956d;
 }
 
 /* ===========================
@@ -53,9 +60,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 15, 30, 0.95);
+    background: rgba(20, 30, 22, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+    border-bottom: 1px solid rgba(61, 90, 55, 0.2);
     z-index: 1000;
 }
 
@@ -72,7 +79,7 @@ body {
 .logo {
     font-size: 1.5em;
     font-weight: 800;
-    background: linear-gradient(135deg, #e94560, #ff6b9d);
+    background: linear-gradient(135deg, #3d5a37, #5a8552);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -99,7 +106,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #e94560, #ff6b9d);
+    background: linear-gradient(90deg, #3d5a37, #5a8552);
     transition: var(--transition);
 }
 
@@ -162,7 +169,7 @@ body {
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(168, 149, 109, 0.08) 0%, transparent 70%);
     animation: float 20s infinite ease-in-out;
 }
 
@@ -197,7 +204,7 @@ body {
 }
 
 .hero-title {
-    background: linear-gradient(135deg, #ffffff 0%, #e94560 50%, #ff6b9d 100%);
+    background: linear-gradient(135deg, #e8ebe5 0%, #3d5a37 50%, #22281e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -236,14 +243,14 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #e94560, #ff6b9d);
+    background: linear-gradient(135deg, #3d5a37, #5a8552);
     color: white;
-    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 10px 30px rgba(61, 90, 55, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
+    box-shadow: 0 15px 40px rgba(61, 90, 55, 0.4);
 }
 
 .btn-secondary {
@@ -287,7 +294,7 @@ body {
 }
 
 .card-1 {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #8b6f47, #c9b896);
     color: white;
     top: 0;
     left: 0;
@@ -295,7 +302,7 @@ body {
 }
 
 .card-2 {
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: linear-gradient(135deg, #5a8552, #7aaa6e);
     color: white;
     top: 100px;
     right: 50px;
@@ -303,7 +310,7 @@ body {
 }
 
 .card-3 {
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    background: linear-gradient(135deg, #282f1f, #3d5a37);
     color: white;
     bottom: 50px;
     left: 20px;
@@ -311,8 +318,8 @@ body {
 }
 
 .card-4 {
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
-    color: white;
+    background: linear-gradient(135deg, #d4cfc0, #e8ebe5);
+    color: #22281e;
     bottom: 20px;
     right: 0;
     animation-delay: 1.5s;
@@ -422,7 +429,7 @@ body {
 .header-line {
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #e94560, #ff6b9d);
+    background: linear-gradient(90deg, #3d5a37, #5a8552);
     margin: 0 auto;
     border-radius: 2px;
 }
@@ -432,7 +439,7 @@ body {
    =========================== */
 .about {
     padding: 100px 0;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #22281e 0%, #282f1f 50%, #1f291e 100%);
     position: relative;
 }
 
@@ -462,14 +469,15 @@ body {
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--highlight-color);
-    box-shadow: 0 10px 40px rgba(233, 69, 96, 0.2);
+    border: 3px solid;
+    border-image: linear-gradient(135deg, #3d5a37, #8b6f47) 1;
+    box-shadow: 0 10px 40px rgba(139, 111, 71, 0.2), inset 0 0 30px rgba(139, 111, 71, 0.1);
     transition: var(--transition);
 }
 
 .profile-image:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 20px 50px rgba(139, 111, 71, 0.25);
 }
 
 .social-links {
@@ -493,7 +501,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #e94560, #ff6b9d);
+    background: linear-gradient(90deg, #8b6f47, #c9b896);
     transition: var(--transition);
 }
 
@@ -523,10 +531,10 @@ body {
 }
 
 .social-icon-link:hover {
-    background: linear-gradient(135deg, var(--highlight-color), #ff6b9d);
+    background: linear-gradient(135deg, #a8956d, #d4cfc0);
     color: var(--white);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 10px 25px rgba(168, 149, 109, 0.3);
 }
 
 .stats-grid {
@@ -537,12 +545,22 @@ body {
 
 .stat {
     text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(139, 111, 71, 0.1) 0%, rgba(61, 90, 55, 0.1) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(139, 111, 71, 0.2);
+    transition: var(--transition);
+}
+
+.stat:hover {
+    background: linear-gradient(135deg, rgba(139, 111, 71, 0.15) 0%, rgba(61, 90, 55, 0.15) 100%);
+    transform: translateY(-5px);
 }
 
 .stat-number {
     font-size: 2.5em;
     font-weight: 800;
-    background: linear-gradient(135deg, #e94560, #ff6b9d);
+    background: linear-gradient(135deg, #8b6f47, #c9b896);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -584,19 +602,19 @@ body {
 }
 
 .project-card {
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, #282f1f 0%, var(--secondary-color) 100%);
     border-radius: 15px;
     overflow: hidden;
     transition: var(--transition);
-    border: 1px solid rgba(233, 69, 96, 0.1);
+    border: 1px solid rgba(139, 111, 71, 0.15);
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(233, 69, 96, 0.3);
-    box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+    border-color: rgba(139, 111, 71, 0.3);
+    box-shadow: 0 20px 40px rgba(139, 111, 71, 0.2);
 }
 
 .project-image {
@@ -639,7 +657,7 @@ body {
 }
 
 .tag {
-    background: rgba(233, 69, 96, 0.2);
+    background: rgba(139, 111, 71, 0.2);
     color: var(--highlight-color);
     padding: 5px 12px;
     border-radius: 20px;
@@ -670,7 +688,7 @@ body {
    =========================== */
 .skills {
     padding: 100px 0;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #1f291e 0%, #22281e 50%, #282f1f 100%);
 }
 
 .skills-container {
@@ -696,6 +714,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(139, 111, 71, 0.08) 0%, rgba(61, 90, 55, 0.08) 100%);
+    border-radius: 8px;
+    border-left: 3px solid #8b6f47;
 }
 
 .skill-name {
@@ -707,14 +729,14 @@ body {
 .skill-bar {
     width: 100%;
     height: 6px;
-    background: rgba(233, 69, 96, 0.1);
+    background: rgba(139, 111, 71, 0.15);
     border-radius: 3px;
     overflow: hidden;
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, #e94560, #ff6b9d);
+    background: linear-gradient(90deg, #8b6f47, #c9b896);
     border-radius: 3px;
     animation: fillBar 1.5s ease-out;
 }
@@ -751,7 +773,7 @@ body {
    =========================== */
 .contact {
     padding: 100px 0;
-    background: var(--dark-bg);
+    background: linear-gradient(135deg, #141e16 0%, #1f291e 50%, #22281e 100%);
 }
 
 .contact-content {
@@ -778,6 +800,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(139, 111, 71, 0.1) 0%, rgba(61, 90, 55, 0.08) 100%);
+    border-radius: 8px;
+    border-left: 3px solid #8b6f47;
 }
 
 .info-label {
@@ -814,8 +840,8 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 15px 20px;
-    background: var(--secondary-color);
-    border: 1px solid rgba(233, 69, 96, 0.2);
+    background: linear-gradient(135deg, rgba(139, 111, 71, 0.08) 0%, rgba(61, 90, 55, 0.08) 100%);
+    border: 2px solid rgba(139, 111, 71, 0.3);
     border-radius: 8px;
     color: var(--light-text);
     font-family: inherit;
@@ -831,8 +857,9 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--highlight-color);
-    background: rgba(233, 69, 96, 0.05);
+    border-color: #8b6f47;
+    background: linear-gradient(135deg, rgba(139, 111, 71, 0.15) 0%, rgba(61, 90, 55, 0.1) 100%);
+    box-shadow: 0 0 15px rgba(139, 111, 71, 0.2);
 }
 
 .form-group textarea {
@@ -850,7 +877,7 @@ body {
    =========================== */
 .footer {
     background: var(--secondary-color);
-    border-top: 1px solid rgba(233, 69, 96, 0.1);
+    border-top: 1px solid rgba(139, 111, 71, 0.1);
     padding: 40px 0;
 }
 
