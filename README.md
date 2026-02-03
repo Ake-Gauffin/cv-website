@@ -1,3 +1,3 @@
-# CV
+# Resume
 
-Easy CV website to learn managing Pages to deploy a website through git.
+Resume website to learn managing Pages to deploy a website through git.
