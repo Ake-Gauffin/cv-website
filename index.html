@@ -6,8 +6,11 @@
     <title>Åke Gauffin - CS and education student</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
 </head>
 <body>
+    <div id="scroll-progress"></div>
+    <canvas id="confetti-canvas"></canvas>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -40,10 +43,17 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="floating-card card-1">Python</div>
-                <div class="floating-card card-2">SQL</div>
-                <div class="floating-card card-3">Javascript</div>
-                <div class="floating-card card-4">HTML/CSS</div>
+                <div class="tech-stack">
+                    <div class="tech-bubble bubble-1"><i class="fab fa-linux"></i></div>
+                    <div class="tech-bubble bubble-2"><i class="fab fa-docker"></i></div>
+                    <div class="tech-bubble bubble-3"><i class="fab fa-java"></i></div>
+                    <div class="tech-bubble bubble-4"><i class="fab fa-python"></i></div>
+                    <div class="tech-bubble bubble-5"><i class="fab fa-js-square"></i></div>
+                    <div class="tech-bubble bubble-6"><i class="fas fa-code"></i></div>
+                    <div class="tech-bubble bubble-7"><i class="fas fa-database"></i></div>
+                    <div class="tech-bubble bubble-8"><i class="fab fa-git-alt"></i></div>
+                    <div class="tech-bubble bubble-9"><i class="fas fa-gamepad"></i></div>
+                </div>
             </div>
         </div>
         <!-- <div class="scroll-indicator">
@@ -93,7 +103,7 @@
 
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #3d5a37 0%, #5a8552 100%);"></div>
                     <div class="project-content">
                         <h3>E-Commerce Platform</h3>
                         <p>A full-featured shopping platform with real-time inventory, payment processing, and analytics dashboard.</p>
@@ -107,7 +117,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #8b6f47 0%, #c9b896 100%);"></div>
                     <div class="project-content">
                         <h3>Social Media App</h3>
                         <p>Real-time messaging platform with video calls, story sharing, and AI-powered content recommendations.</p>
@@ -121,7 +131,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #3d5a37 0%, #7aaa6e 100%);"></div>
                     <div class="project-content">
                         <h3>Analytics Dashboard</h3>
                         <p>Enterprise analytics tool with interactive charts, real-time data processing, and predictive analytics.</p>
@@ -135,7 +145,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #22281e 0%, #3d5a37 100%);"></div>
                     <div class="project-content">
                         <h3>Task Management Tool</h3>
                         <p>Collaborative workspace for teams with real-time updates, file sharing, and automated workflows.</p>
@@ -149,7 +159,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #a8956d 0%, #d4cfc0 100%);"></div>
                     <div class="project-content">
                         <h3>Learning Platform</h3>
                         <p>Online education platform with interactive courses, live sessions, and progress tracking.</p>
@@ -163,7 +173,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                    <div class="project-image" style="background: linear-gradient(135deg, #5a8552 0%, #8b6f47 100%);"></div>
                     <div class="project-content">
                         <h3>Design System</h3>
                         <p>Comprehensive component library with documentation, accessibility compliance, and theme customization.</p>
@@ -189,36 +199,30 @@
 
             <div class="skills-container">
                 <div class="skill-group">
-                    <h3 class="skill-group-title">Frontend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name">HTML</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Javascript</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="50%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">CSS</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="60%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-title">Backend</h3>
+                    <h3 class="skill-group-title">Programming Languages</h3>
                     <div class="skill-list">
                         <div class="skill-item">
                             <div class="skill-name">Python</div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">TypeScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Java</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="55%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -228,17 +232,23 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-name">Javascript</div>
+                            <div class="skill-name">HTML/CSS</div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="40%"></div>
+                                <div class="skill-progress" data-width="65%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h3 class="skill-group-title">DevOps & Tools</h3>
+                    <h3 class="skill-group-title">Tools & Technologies</h3>
                     <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Linux</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
                         <div class="skill-item">
                             <div class="skill-name">Docker</div>
                             <div class="skill-bar">
@@ -252,9 +262,27 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-name">Linux</div>
+                            <div class="skill-name">Bash</div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
+                                <div class="skill-progress" data-width="60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Power BI</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Salesforce</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Microsoft Office</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,42 @@
 // ===========================
+// SCROLL PROGRESS BAR
+// ===========================
+const scrollProgress = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    scrollProgress.style.width = scrolled + '%';
+});
+
+// ===========================
+// BUBBLE CLICK - TOGGLE ROTATION DIRECTION
+// ===========================
+const techStack = document.querySelector('.tech-stack');
+
+document.querySelectorAll('.tech-bubble').forEach(bubble => {
+    bubble.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        if (techStack) {
+            techStack.classList.toggle('reversed');
+        }
+    });
+});
+
+// ===========================
+// LOGO CLICK - GO HOME AND RELOAD
+// ===========================
+const logo = document.querySelector('.logo');
+if (logo) {
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', () => {
+        window.location.href = window.location.pathname;
+    });
+}
+
+// ===========================
 // SMOOTH NAVIGATION
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -20,11 +58,13 @@ const navMenu = document.querySelector('.nav-menu');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
         });
     });
 }
