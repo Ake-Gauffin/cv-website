@@ -1,5 +1,3 @@
-# Resume
+A personal résumé website built to learn how to manage and deploy a website using GitHub Pages and Git.
 
-Resume website to learn managing Pages to deploy a website through git.
-
-See result on akegauffin.com
+View the live website at [akegauffin.com](https://akegauffin.com).
