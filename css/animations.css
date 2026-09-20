@@ -1,0 +1,141 @@
+/* Motion stays decorative: content remains visible without JavaScript. */
+@keyframes enter {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+@keyframes orbit-breathe {
+  0%,
+  100% {
+    scale: 1;
+    opacity: 0.55;
+  }
+  50% {
+    scale: 1.035;
+    opacity: 1;
+  }
+}
+@keyframes signal {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px #c5e89a0c;
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px #c5e89a00,
+      0 0 15px #c5e89a35;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * {
+    animation: enter 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-copy > :nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .hero-copy > :nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .hero-copy > :nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .hero-copy > :nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .terminal {
+    animation: drift 7s ease-in-out infinite;
+  }
+  .floating-tag {
+    animation: drift 5s ease-in-out infinite;
+  }
+  .tag-learn {
+    animation-delay: -2s;
+    animation-duration: 6s;
+  }
+  .tag-systems {
+    animation-delay: -3.5s;
+    animation-duration: 7s;
+  }
+  .orbit {
+    animation: orbit-breathe 8s ease-in-out infinite;
+  }
+  .orbit-inner {
+    animation-delay: -4s;
+  }
+  .status-dot {
+    animation: signal 3s ease-in-out infinite;
+  }
+  .reveal-pending {
+    opacity: 0;
+    translate: 0 25px;
+  }
+  .reveal-visible {
+    animation: enter 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+  nav.open {
+    animation: enter 0.22s ease-out both;
+  }
+}
+.button span,
+.text-link span,
+.email-link span,
+.github-link {
+  display: inline-block;
+  transition: translate 0.25s ease;
+}
+.photo-wrap img {
+  transition:
+    scale 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.7s ease;
+}
+.pills span,
+.interest-tags span {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    translate 0.25s ease;
+}
+.menu-toggle span {
+  display: inline-block;
+  transition: rotate 0.25s ease;
+}
+.menu-toggle[aria-expanded="true"] span {
+  rotate: 45deg;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .button:hover span,
+  .email-link:hover span {
+    translate: 3px -3px;
+  }
+  .text-link:hover span {
+    translate: 0 3px;
+  }
+  .github-row:hover .github-link {
+    translate: 4px -2px;
+  }
+  .photo-wrap:hover img {
+    scale: 1.035;
+    filter: saturate(0.95);
+  }
+  .pills span:hover,
+  .interest-tags span:hover {
+    translate: 0 -3px;
+    background: #3a4c31;
+    color: var(--lime);
+  }
+}

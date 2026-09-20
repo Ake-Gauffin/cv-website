@@ -1,0 +1,247 @@
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (min-width: 1500px) {
+  .hero {
+    padding-top: 105px;
+    padding-bottom: 110px;
+  }
+}
+@media (max-width: 1000px) {
+  .wrap,
+  .header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .hero {
+    gap: 10px;
+  }
+  h1 {
+    font-size: 55px;
+  }
+  .hero-art {
+    transform: scale(0.88);
+    transform-origin: center right;
+  }
+  .about-grid {
+    gap: 40px;
+  }
+  .skill-card {
+    padding: 20px;
+  }
+  .tech-strip .wrap {
+    gap: 16px;
+  }
+  .strip-label {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .wrap,
+  .header {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+  .header {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    position: relative;
+  }
+  .menu-toggle {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid var(--line);
+    color: var(--text);
+    background: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 16px;
+    right: 16px;
+    background: #223226;
+    border: 1px solid var(--line);
+    padding: 22px;
+    z-index: 5;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  nav.open {
+    display: flex;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 45px;
+    gap: 30px;
+  }
+  h1 {
+    font-size: clamp(43px, 10vw, 66px);
+    letter-spacing: -2.7px;
+  }
+  .eyebrow {
+    font-size: 8px;
+  }
+  .intro {
+    font-size: 14px;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 16px 28px;
+  }
+  .wordmark {
+    font-size: clamp(26px, 6vw, 34px);
+    letter-spacing: -1.5px;
+  }
+  .desktop {
+    display: none;
+  }
+  .hero-art {
+    transform: none;
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
+    height: 410px;
+  }
+  .terminal {
+    width: min(310px, 85%);
+  }
+  .orbit-outer {
+    width: 330px;
+    height: 330px;
+    max-width: 100%;
+  }
+  .orbit-inner {
+    width: 260px;
+    height: 260px;
+  }
+  .art-label {
+    top: 0;
+  }
+  .tag-code {
+    top: 36px;
+    left: 4px;
+  }
+  .tag-learn {
+    top: 82px;
+    right: 0;
+  }
+  .tag-systems {
+    bottom: 20px;
+    right: 0;
+  }
+  .floating-tag {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+  .art-bottom {
+    bottom: 0;
+  }
+  .tech-strip .wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    font-size: 12px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+  .strip-plus {
+    display: none;
+  }
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .small-note {
+    display: none;
+  }
+  .section-heading {
+    margin-bottom: 28px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .photo-wrap {
+    max-width: 420px;
+  }
+  .photo-wrap img {
+    height: 350px;
+  }
+  .about-copy h2 {
+    font-size: 34px;
+  }
+  .skills-heading {
+    display: block;
+  }
+  .skills-heading p {
+    margin-top: 20px;
+  }
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-card p {
+    min-height: 0;
+  }
+  .card-top {
+    margin-bottom: 18px;
+  }
+  .skills-heading h2 {
+    font-size: 36px;
+  }
+  .github-row {
+    gap: 20px;
+  }
+  .github-link {
+    font-size: 10px;
+  }
+  .github-row h3 {
+    font-size: 17px;
+  }
+  .contact h2 {
+    font-size: 40px;
+  }
+  .contact-actions {
+    gap: 10px;
+  }
+  .email-link {
+    font-size: clamp(16px, 4.5vw, 24px);
+  }
+  .email-link span {
+    margin-left: 4px;
+  }
+  .contact-bottom {
+    gap: 16px;
+    font-size: 10px;
+  }
+  footer {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  footer > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .location {
+    margin-top: 30px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

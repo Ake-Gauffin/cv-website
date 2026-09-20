@@ -1,0 +1,250 @@
+.tech-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.tech-strip .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: #c2cabd;
+  font:
+    14px "Manrope",
+    sans-serif;
+}
+.strip-label {
+  font:
+    8px "DM Sans",
+    sans-serif;
+  letter-spacing: 1.7px;
+  color: #8f9c8c;
+  white-space: nowrap;
+}
+.strip-plus {
+  color: var(--lime);
+  font-size: 23px;
+}
+.section {
+  padding-top: 78px;
+  padding-bottom: 80px;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 43px;
+}
+.small-note {
+  font-size: 11px;
+  color: #9ba998;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.2fr;
+  gap: 88px;
+  align-items: center;
+}
+.photo-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #233128;
+}
+.photo-wrap img {
+  display: block;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: saturate(0.65);
+}
+.photo-caption {
+  padding: 16px 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 9px;
+  color: #c3cbbf;
+}
+.photo-caption span:first-child {
+  letter-spacing: 1px;
+  color: var(--lime);
+}
+h2 {
+  font-size: 39px;
+  line-height: 1.2;
+  letter-spacing: -1.7px;
+  margin-bottom: 23px;
+}
+.about-copy p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 17px;
+}
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 23px 0;
+}
+.interest-tags span {
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #bec9b6;
+}
+.skills-section {
+  background: #1c2a20;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.skills-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.skills-heading p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.skill-card {
+  border: 1px solid #40503b;
+  background: #1b281e;
+  border-radius: 5px;
+  padding: 26px;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.skill-card:hover {
+  border-color: #8eab74;
+  transform: translateY(-4px);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  font-size: 9px;
+  color: #8c9a86;
+}
+.skill-icon {
+  color: var(--lime);
+  font-family: monospace;
+  font-size: 23px;
+}
+.skill-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.skill-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  min-height: 44px;
+}
+.pills {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.pills span {
+  font: 10px monospace;
+  color: #c5d1bb;
+  padding: 6px 9px;
+  background: #2c3929;
+  border-radius: 3px;
+}
+.github-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 35px;
+  padding: 27px 0 0;
+  border-top: 1px solid var(--line);
+}
+.github-row .eyebrow {
+  font-size: 8px;
+  color: #9caa94;
+}
+.github-row h3 {
+  font-size: 21px;
+  margin: 8px 0 0;
+  letter-spacing: -0.5px;
+}
+.github-link {
+  font-size: 12px;
+  color: var(--lime);
+}
+.contact {
+  text-align: center;
+  padding-top: 92px;
+  padding-bottom: 67px;
+}
+.contact > .eyebrow {
+  justify-content: center;
+}
+.contact h2 {
+  font-size: 54px;
+  margin: 25px 0 21px;
+  letter-spacing: -2.3px;
+}
+.contact > p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 32px;
+}
+.email-link {
+  font-size: 25px;
+  letter-spacing: -0.7px;
+  border-bottom: 1px solid #657655;
+  padding-bottom: 8px;
+}
+.email-link span {
+  color: var(--lime);
+  margin-left: 15px;
+}
+#copy-email {
+  border: 1px solid #4a5a43;
+  background: transparent;
+  color: var(--lime);
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  font-size: 23px;
+  line-height: 1;
+}
+#copy-email:hover {
+  background: #31422b;
+}
+.copy-status {
+  min-height: 22px;
+  margin: 9px 0 10px !important;
+  font-size: 11px !important;
+}
+.contact-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: #a7b29f;
+  font-size: 11px;
+}

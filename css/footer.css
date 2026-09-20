@@ -1,0 +1,35 @@
+footer {
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-top: 26px;
+  padding-bottom: 29px;
+}
+footer > .wordmark {
+  font-size: 27px;
+}
+footer > span {
+  font-size: 10px;
+  color: #9aa895;
+  margin-right: auto;
+}
+footer > div {
+  display: flex;
+  gap: 24px;
+  font-size: 10px;
+  color: #bcc6b6;
+}
+.skip {
+  position: fixed;
+  top: -80px;
+  left: 16px;
+  background: var(--lime);
+  color: var(--bg);
+  padding: 10px;
+  z-index: 10;
+}
+.skip:focus {
+  top: 10px;
+}

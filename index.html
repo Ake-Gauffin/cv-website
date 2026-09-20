@@ -1,353 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Åke Gauffin - CS and education student</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
-</head>
-<body>
-    <div id="scroll-progress"></div>
-    <canvas id="confetti-canvas"></canvas>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">ÅG</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <!-- <li><a href="#work" class="nav-link">Work</a></li> -->
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17241c" />
+    <meta
+      name="description"
+      content="Åke Gauffin — computer engineering and education student at KTH in Stockholm. Exploring software, systems, and how people learn."
+    />
+    <title>Åke Gauffin — Code, curiosity & a human perspective</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/navigation.js" defer></script>
+    <script src="js/page.js" defer></script>
+    <script src="js/reveals.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+    <script src="js/particles.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <!-- Sidhuvud och mobilmeny -->
+    <header class="header">
+      <a class="wordmark" href="#home" aria-label="Åke Gauffin home"
+        >Åke Gauffin<span>.</span></a
+      >
+      <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        Menu <span>＋</span>
+      </button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Skills</a
+        ><a
+          href="https://github.com/Ake-Gauffin"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub ↗</a
+        ><a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <!-- Introduktion och terminalillustration -->
+      <section class="hero wrap" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> CURIOUS MIND. OPEN TO
+            OPPORTUNITIES.
+          </div>
+          <h1 id="hero-title">
+            Hi, I’m Åke.<br />I connect <em>code</em><br />and curiosity<span
+              class="accent"
+              >.</span
+            >
+          </h1>
+          <p class="intro">
+            Computer engineering & education student at KTH.<br
+              class="desktop"
+            />
+            Building things, understanding systems, and always<br
+              class="desktop"
+            />
+            finding something new to learn.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact"
+              >Get in touch <span>↗</span></a
+            ><a class="text-link" href="#skills"
+              >Explore my skills <span>↓</span></a
+            >
+          </div>
+          <div class="location">
+            <span>◎</span> Stockholm, Sweden <span class="separator">/</span>
+            <span id="local-time">Europe / Stockholm</span>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Åke Gauffin</h1>
-                <p class="hero-subtitle">Computer science student looking for a part-time job to evolve</p>
-                <div class="hero-buttons">
-                    <!-- <a href="#work" class="btn btn-primary">View My Work</a> -->
-                     <a href="#skills" class="btn btn-primary">See my skills</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
+        <div
+          class="hero-art"
+          aria-label="An illustration of connected interests: code, systems, and learning"
+        >
+          <div class="orbit orbit-outer"></div>
+          <div class="orbit orbit-inner"></div>
+          <div class="orbit-axis"></div>
+          <span class="orbit-dot dot-one"></span
+          ><span class="orbit-dot dot-two"></span>
+          <div class="art-label">A LITTLE OF WHAT MAKES ME, ME</div>
+          <div class="floating-tag tag-code"><span>⌘</span> Code</div>
+          <div class="floating-tag tag-learn"><span>↗</span> Keep learning</div>
+          <div class="floating-tag tag-systems"><span>▤</span> Systems</div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="terminal-dots">● ● ●</span
+              ><span>ake@stockholm: ~</span><span>⌁</span>
             </div>
-            <div class="hero-visual">
-                <div class="tech-stack">
-                    <div class="tech-bubble bubble-1"><i class="fab fa-linux"></i></div>
-                    <div class="tech-bubble bubble-2"><i class="fab fa-docker"></i></div>
-                    <div class="tech-bubble bubble-3"><i class="fab fa-java"></i></div>
-                    <div class="tech-bubble bubble-4"><i class="fab fa-python"></i></div>
-                    <div class="tech-bubble bubble-5"><i class="fab fa-js-square"></i></div>
-                    <div class="tech-bubble bubble-6"><i class="fas fa-code"></i></div>
-                    <div class="tech-bubble bubble-7"><i class="fas fa-database"></i></div>
-                    <div class="tech-bubble bubble-8"><i class="fab fa-git-alt"></i></div>
-                    <div class="tech-bubble bubble-9"><i class="fas fa-gamepad"></i></div>
-                </div>
+            <div class="terminal-body">
+              <p>
+                <span class="muted">~</span> <span class="lime">❯</span> whoami
+              </p>
+              <p class="terminal-name">
+                Åke Gauffin<span class="cursor">▌</span>
+              </p>
+              <p class="muted">Student. Tinkerer. Problem solver.</p>
+              <div class="terminal-rule"></div>
+              <p><span class="lime">const</span> interests = [</p>
+              <p class="indent">
+                "computer science",<br />"sharing knowledge",<br />"building &
+                breaking things"
+              </p>
+              <p>];</p>
+              <p class="terminal-comment">// A work in progress!</p>
             </div>
+          </div>
+          <div class="art-bottom">
+            <span>01 — ALWAYS EXPLORING</span><span>↙ ↗</span>
+          </div>
         </div>
-        <!-- <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="mouse"> -->
-                <!-- <div class="wheel"></div> -->
-            </div>
+      </section>
+      <!-- Teknikband -->
+      <div class="tech-strip">
+        <div class="wrap">
+          <span class="strip-label">IN MY TOOLKIT</span><span>Python</span
+          ><span>Java</span><span>TypeScript</span><span>SQL</span
+          ><span>Linux</span><span>Docker</span><span>Git</span
+          ><span>C</span><span>Haskell</span><span>Godot</span
+          ><span>PHP</span
+
+          ><span class="strip-plus">+</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <div class="header-line"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>28-year-old M.Sc. student in computer engineering and education at KTH. Located in Stockholm and seeking new experiences in the computing industry. Eager to contribute, learn, and grow in a professional environment</p>
-
-                    <p>When I'm not studying or working, I enjoy tinkering with my servers, playing guitar or a retro videogame, reading, or watching movies with my partner.</p>
-                    <div class="social-icons">
-                        <a href="https://github.com/Ake-Gauffin" class="social-icon-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ake-gauffin/" class="social-icon-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="assets/guitarMAN.jpg" alt="Åke Gauffin" class="profile-image">
-                </div>
-            </div>
+      </div>
+      <!-- Om mig -->
+      <section class="about wrap section" id="about">
+        <div class="section-heading">
+          <span class="eyebrow">01 / THE PERSON BEHIND THE CODE</span
+          ><span class="small-note">Technology, with a human perspective.</span>
         </div>
-    </section>
-
-    <!-- Work/Projects Section
-    <section id="work" class="work">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Work</h2>
-                <div class="header-line"></div>
+        <div class="about-grid">
+          <div class="photo-wrap">
+            <img
+              src="assets/guitar.jpg"
+              alt="Åke Gauffin playing guitar"
+              width="640"
+              height="800"
+              loading="lazy"
+            />
+            <div class="photo-caption">
+              <span>OFFLINE MODE</span
+              ><span>A different kind of keyboard. ↗</span>
             </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #3d5a37 0%, #5a8552 100%);"></div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-featured shopping platform with real-time inventory, payment processing, and analytics dashboard.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #8b6f47 0%, #c9b896 100%);"></div>
-                    <div class="project-content">
-                        <h3>Social Media App</h3>
-                        <p>Real-time messaging platform with video calls, story sharing, and AI-powered content recommendations.</p>
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">GraphQL</span>
-                            <span class="tag">Firebase</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #3d5a37 0%, #7aaa6e 100%);"></div>
-                    <div class="project-content">
-                        <h3>Analytics Dashboard</h3>
-                        <p>Enterprise analytics tool with interactive charts, real-time data processing, and predictive analytics.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">AWS</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #22281e 0%, #3d5a37 100%);"></div>
-                    <div class="project-content">
-                        <h3>Task Management Tool</h3>
-                        <p>Collaborative workspace for teams with real-time updates, file sharing, and automated workflows.</p>
-                        <div class="project-tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Prisma</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #a8956d 0%, #d4cfc0 100%);"></div>
-                    <div class="project-content">
-                        <h3>Learning Platform</h3>
-                        <p>Online education platform with interactive courses, live sessions, and progress tracking.</p>
-                        <div class="project-tags">
-                            <span class="tag">Django</span>
-                            <span class="tag">React</span>
-                            <span class="tag">WebSocket</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #5a8552 0%, #8b6f47 100%);"></div>
-                    <div class="project-content">
-                        <h3>Design System</h3>
-                        <p>Comprehensive component library with documentation, accessibility compliance, and theme customization.</p>
-                        <div class="project-tags">
-                            <span class="tag">Storybook</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">CSS-in-JS</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
+          </div>
+          <div class="about-copy">
+            <h2>Engineer in the making.<br /><em>Curious by nature.</em></h2>
+            <p>
+              I’m currently studying computer engineering and education at KTH in
+              Stockholm. I’m interested in both how technology works and how we
+              help people understand it.
+            </p>
+            <p>
+              I’m looking for an opportunity to contribute, learn from
+              others, and turn what I’m studying into something useful.
+            </p>
+            <p>
+              Away from my studies, you’ll usually find me tinkering with my servers, playing music with my bandmates, hanging out with friends, or enjoying a good retro video game.
+            </p>
+            <div class="interest-tags">
+              <span>⌘ Home servers</span><span>♫ Guitar</span
+              ><span>✚ Retro games</span><span>▱ Books & films</span>
             </div>
+            <a
+              class="text-link"
+              href="https://www.linkedin.com/in/ake-gauffin/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Find me on LinkedIn <span>↗</span></a
+            >
+          </div>
         </div>
-    </section> -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2>Skills & Technologies</h2>
-                <div class="header-line"></div>
+      </section>
+      <!-- Kunskaper -->
+      <section class="skills-section" id="skills">
+        <div class="wrap section">
+          <div class="section-heading">
+            <span class="eyebrow">02 / MY TOOLKIT</span
+            ><span class="small-note">Learning by doing.</span>
+          </div>
+          <div class="skills-heading">
+            <h2>Different tools.<br /><em>One curious mind.</em></h2>
+            <p>
+              From writing code to running my own servers.<br />These are the
+              technologies I work with and explore.
+            </p>
+          </div>
+          <div class="skill-grid">
+            <article class="skill-card">
+              <div class="card-top">
+                <span class="skill-icon">&lt;/&gt;</span><span>01</span>
+              </div>
+              <h3>Programming</h3>
+              <p>Turning ideas into logic, structure, and working software.</p>
+              <div class="pills">
+                <span>Python</span><span>Java</span><span>JavaScript</span
+                ><span>TypeScript</span><span>SQL</span><span>HTML / CSS</span>
+                <span>C</span><span>Haskell</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-top">
+                <span class="skill-icon">▤</span><span>02</span>
+              </div>
+              <h3>Systems & tools</h3>
+              <p>
+                Exploring what happens under the hood, one server at a time.
+              </p>
+              <div class="pills">
+                <span>Linux</span><span>Docker</span><span>Git</span
+                ><span>Bash</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-top">
+                <span class="skill-icon">↗</span><span>03</span>
+              </div>
+              <h3>Data & platforms</h3>
+              <p>Working with data and the tools that make it useful.</p>
+              <div class="pills">
+                <span>SQL</span><span>Power BI</span><span>Salesforce</span>
+              </div>
+            </article>
+          </div>
+          <a
+            class="github-row"
+            href="https://github.com/Ake-Gauffin"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><div>
+              <span class="eyebrow">FROM CURIOSITY TO COMMITS</span>
+              <h3>See what I’m working on.</h3>
             </div>
-
-            <div class="skills-container">
-                <div class="skill-group">
-                    <h3 class="skill-group-title">Programming Languages</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name">Python</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">JavaScript</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="50%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">TypeScript</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="50%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Java</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="55%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">SQL</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">HTML/CSS</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="65%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="skill-group-title">Tools & Technologies</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name">Linux</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Docker</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="50%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Git</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="65%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Bash</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="60%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Power BI</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="50%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Salesforce</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Microsoft Office</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <span class="github-link">Explore my GitHub ↗</span></a
+          >
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Let's get in contact!</h2>
-                <div class="header-line"></div>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-text">
-                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have an idea or just want to chat about tech, feel free to reach out!</p>
-                    <div class="contact-info">
-                        <div class="info-item">
-                            <span class="info-label">Email</span>
-                            <a href="mailto:ake.gauffin@hotmail.com">ake.gauffin@hotmail.com</a>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Phone</span>
-                            <a href="tel:+46707536168">+46 70 753 61 68</a>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location</span>
-                            <p>Stockholm, Sweden</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button> -->
-                </form>
-            </div>
+      </section>
+      <!-- Kontakt — kopieringsknappen hämtar adressen från mailto-länken -->
+      <section class="contact wrap section" id="contact">
+        <div class="eyebrow">
+          <span class="status-dot"></span> 03 / LET’S CONNECT
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- <p>&copy; 2025 John Doe. All rights reserved.</p> -->
-                <div class="footer-links">
-                    <!-- <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Sitemap</a> -->
-                </div>
-            </div>
+        <h2>Good things start<br />with a <em>conversation.</em></h2>
+        <p>
+          Have an opportunity, a project, or a shared interest in tech?<br />I’d
+          love to hear from you.
+        </p>
+        <div class="contact-actions">
+          <a class="email-link" href="mailto:ake.gauffin@hotmail.com"
+            >ake.gauffin@hotmail.com <span>↗</span></a
+          ><button
+            id="copy-email"
+            aria-label="Copy email address"
+            title="Copy email address"
+          >
+            ▢
+          </button>
         </div>
+        <p
+          class="copy-status"
+          id="copy-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <div class="contact-bottom">
+          <a href="tel:+46707536168">+46 70 753 61 68 ↗</a
+          ><span>Stockholm, Sweden</span>
+        </div>
+      </section>
+    </main>
+    <!-- Sidfot -->
+    <footer class="wrap">
+      <a class="wordmark" href="#home" aria-label="Back to top"
+        >Åke Gauffin<span>.</span></a
+      ><span>© <span id="year">2026</span> Åke Gauffin</span>
+      <div>
+        <a
+          href="https://github.com/Ake-Gauffin"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub ↗</a
+        ><a
+          href="https://www.linkedin.com/in/ake-gauffin/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn ↗</a
+        ><a href="#home">Back to top ↑</a>
+      </div>
     </footer>
-
-    <script src="index.js"></script>
-</body>
+  </body>
 </html>
