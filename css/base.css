@@ -30,6 +30,13 @@ button {
   font: inherit;
   cursor: pointer;
 }
+.inline-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -50,6 +57,7 @@ button:focus-visible {
   padding-right: 48px;
 }
 .header {
+  z-index: 10;
   max-width: 1240px;
   margin: auto;
   padding: 23px 48px;
