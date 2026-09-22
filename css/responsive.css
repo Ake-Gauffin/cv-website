@@ -196,14 +196,16 @@
   .skill-grid {
     grid-template-columns: 1fr;
   }
-  .skill-card p {
-    min-height: 0;
-  }
   .card-top {
     margin-bottom: 18px;
   }
   .skills-heading h2 {
     font-size: 36px;
+  }
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
   }
   .github-row {
     gap: 20px;

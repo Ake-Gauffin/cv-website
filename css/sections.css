@@ -146,14 +146,8 @@ h2 {
 }
 .skill-card h3 {
   font-size: 19px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   letter-spacing: -0.5px;
-}
-.skill-card p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.8;
-  min-height: 44px;
 }
 .pills {
   display: flex;
@@ -167,6 +161,66 @@ h2 {
   padding: 6px 9px;
   background: #2c3929;
   border-radius: 3px;
+}
+.skill-card .pills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+}
+.skill-card .pills span {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px;
+  font-size: 12px;
+}
+.project-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.2fr;
+  gap: 48px;
+  margin-top: 32px;
+  padding: 32px;
+  border: 1px solid #40503b;
+  border-left: 3px solid var(--lime);
+  border-radius: 5px;
+  background: var(--bg);
+}
+.project-intro .eyebrow {
+  font-size: 11px;
+}
+.project-intro h3 {
+  margin: 16px 0;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.project-client {
+  font-size: 12px;
+  color: var(--muted);
+}
+.project-details > p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.project-stack {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.project-stack h4 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.project-stack .pills {
+  margin-top: 10px;
+}
+.project-stack .pills span {
+  font-size: 12px;
 }
 .github-row {
   display: flex;
